@@ -17,7 +17,7 @@ $frog = new animal2("buduk");
 echo "Name : ".$frog->name."<br>";
 echo "Legs : ".$frog->legs."<br>";
 echo "Cold blooded : ".$frog->cold_blooded."<br>";
-echo "Jump : ".$frog->jump."<br>";
+echo "Jump : ".$frog->jump()."<br>";
 
 echo "<br>";
 
@@ -26,5 +26,5 @@ $ape = new animal1("kera sakti");
 echo "Name : ".$ape->name."<br>";
 echo "Legs : ".$ape->legs."<br>";
 echo "Cold blooded : ".$ape->cold_blooded."<br>";
-echo "Yell : ".$ape->yell."<br>";
+echo "Yell : ".$ape->yell()."<br>";
 ?>

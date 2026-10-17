@@ -11,6 +11,12 @@ class animal2
         $this->name = $str;
     }
 
+    //fungsi jump untuk memanggil kata2 Hop hop
+    public function jump()
+    {
+        return "Hop hop";
+    }
+
 }
 
 ?>

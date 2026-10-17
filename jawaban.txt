@@ -48,9 +48,9 @@ VALUES
     ('Jane Doe',	'jane@doe.com',	'jenita123');
 
 -------------------------------------
-- catagories
+- categories
 -------------------------------------
-INSERT INTO catagories (name) 
+INSERT INTO categories (name) 
 VALUES 
     ('gadget', 'cloth', 'men', 'women', 'branded');
 
