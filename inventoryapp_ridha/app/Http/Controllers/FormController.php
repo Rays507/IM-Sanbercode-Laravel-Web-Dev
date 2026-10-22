@@ -12,15 +12,10 @@ class FormController extends Controller
         return view('register');
     }
 
-    //fungsi untuk menampilkan halaman welcome
-    public function welcome()
+    // fungsi untuk menangkap data yang dikirimkan melalui form register melalui data tampungan $postRequest dan menampilkannya di halaman welcome.php
+    public function welcome(request $postRequest)
     {
-        return view('welcome');
-    }
-
-    // fungsi untuk menangkap data yang dikirimkan melalui form register dan menampilkannya di halaman welcome.php
-    public function ambilDataRegister(request $postRequest)
-    {   
+        {   
         //cek semua data yang dikirimkan melalui form register ke halaman welcome
         // return $postRequest->all();
         //tangkap semua data di $dataPostRequest yang dikirimkan melalui form register
@@ -35,5 +30,6 @@ class FormController extends Controller
             'dataFirstName' => $dataFirstName,
             'dataLastName' => $dataLastName
         ]);
+    }
     }
 }

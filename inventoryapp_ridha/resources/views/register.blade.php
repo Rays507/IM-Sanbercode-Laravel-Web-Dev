@@ -6,7 +6,7 @@
     <title>Form</title>
   </head>
   <body>
-    <form action="/ambilDataRegister" method="post">
+    <form action="/welcome" method="post">
       @csrf
       <h1>Buat akun baru</h1>
       <h2>sign up</h2>
