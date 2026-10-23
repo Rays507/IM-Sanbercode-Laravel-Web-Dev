@@ -1,12 +1,7 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Index</title>
-  </head>
-  <body>
-    <h1>SanberBook</h1>
+@extends('layouts.index')
+@section('title', 'Halaman Utama')
+@section('content')
+<h1>SanberBook</h1>
     <br />
     <h2>Social Media Developer Santai Berkualitas</h2>
     <p>Belajar dan Berbagi agar hidup ini berkualitas</p>
@@ -36,5 +31,4 @@
           Selesai!
         </li>
       </ol>
-  </body>
-</html>
+@endsection

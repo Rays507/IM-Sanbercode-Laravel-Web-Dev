@@ -1,11 +1,6 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Form</title>
-  </head>
-  <body>
+@extends('layouts.index')
+@section('title', 'Halaman Register')
+@section('content')
     <form action="/welcome" method="post">
       @csrf
       <h1>Buat akun baru</h1>
@@ -59,5 +54,4 @@
       <br />
       <button type="submit">Sign up</button>
     </form>
-  </body>
-</html>
+@endsection
