@@ -14,6 +14,9 @@
             <div style="height: 250px; overflow: hidden;" class="text-center">
                 <img src="{{asset('image/'.$item->image)}}" class="w-100 h-100" alt="{{$item->image}}" stye="object-fit:cover;">
             </div>
+            <div class="d-flex">
+                <a href="#" class="btn btn-primary w-30 text-white mt-2">{{$item->category_id}}</a>
+            </div>
             <div class="card-body d-flex flex-column">
                 <h5 class="card-title fw-bold text-dark">{{$item->name, 50}}</h5>
 

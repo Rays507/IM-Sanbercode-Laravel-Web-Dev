@@ -5,6 +5,9 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\FormController;
 use App\Http\Controllers\categoriesController;
 use App\Http\Controllers\ProductsController;
+use App\Http\Controllers\usersController;
+use App\Http\Controllers\profilesController;
+use App\Http\Controllers\authController;
 
 
 //perintah rounte untuk menamngkap fungsi home yang ada di dalam kelas DashboardController untuk menampilkan halaman home
@@ -36,3 +39,16 @@ route::delete('/categories/{id}',[categoriesController::class, 'deleteDataByIdCa
 //CRUD table products
 route::resource('/products',ProductsController::class);
 
+//CRUD table users
+route::resource('/users',usersController::class);
+
+//CRUD table profile
+route::resource('/profile',profileController::class);
+
+//auth
+//page login
+route::get('/login',[authController::class, 'formLogin']);
+route::post('/login',[authController::class, 'login']);
+//page register
+route::get('/createAccount',[authController::class, 'createAccount']);
+route::post('/createAccount',[authController::class, 'signup']);
