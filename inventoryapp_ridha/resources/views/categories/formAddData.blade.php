@@ -1,5 +1,5 @@
 @extends('layouts.index')
-@section('title', 'Halaman Form Categories')
+@section('title', 'Form Add Categories')
 @section('content')
 <form action="/categories" method="post">
     @csrf

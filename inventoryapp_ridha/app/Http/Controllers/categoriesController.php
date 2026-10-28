@@ -6,6 +6,8 @@ use Illuminate\Http\Request;//untuk menangkap data yang dikirimkan melalui form 
 use Illuminate\Support\Facades\DB;//untuk mengakses database inventoryapp
 use carbon\Carbon;//untuk mengambil data tanggal dan waktu sekarang
 
+use App\Models\Categories;
+
 class categoriesController extends Controller
 {
     

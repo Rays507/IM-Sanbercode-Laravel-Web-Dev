@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\FormController;
 use App\Http\Controllers\categoriesController;
+use App\Http\Controllers\ProductsController;
 
 
 //perintah rounte untuk menamngkap fungsi home yang ada di dalam kelas DashboardController untuk menampilkan halaman home
@@ -15,8 +16,7 @@ route::get('/register', [FormController::class, 'register']);
 //perintah rounte untuk menangkap fungsi welcome dengan metode "POST" yang ada di dalam kelas FormConttroller untuk menampilkan halaman welcome
 route::post('/welcome', [FormController::class, 'welcome']);
 
-//CRUD
-
+//CRUD table categories
 //Create
 route::post('/categories', [categoriesController::class, 'categories']);
 route::get('/categories/create', [categoriesController::class, 'create']);
@@ -31,4 +31,8 @@ route::put('categories/{id}', [categoriesController::class, 'updateDataByIdCateg
 
 //Delete row
 route::delete('/categories/{id}',[categoriesController::class, 'deleteDataByIdCategories']);
+
+
+//CRUD table products
+route::resource('/products',ProductsController::class);
 
