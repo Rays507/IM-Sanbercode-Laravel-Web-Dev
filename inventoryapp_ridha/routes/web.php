@@ -6,13 +6,14 @@ use App\Http\Controllers\FormController;
 use App\Http\Controllers\categoriesController;
 use App\Http\Controllers\ProductsController;
 use App\Http\Controllers\usersController;
-use App\Http\Controllers\profilesController;
+use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\authController;
 use App\Http\Middleware\IsAdmin;
 
 
 //perintah rounte untuk menamngkap fungsi home yang ada di dalam kelas DashboardController untuk menampilkan halaman home
 route::get('/', [DashboardController::class, 'index'])->middleware('auth');
+
 
 //perintah rounte untuk menangkap fungsi register yang ada di dalam kelas FormController untuk menampilkan halaman register
 route::get('/register', [FormController::class, 'register']);
@@ -49,7 +50,8 @@ route::resource('/products',ProductsController::class);
 route::resource('/users',usersController::class);
 
 //CRUD table profile
-route::resource('/profile',profileController::class);
+route::resource('/profile',ProfileController::class)->middleware('auth');
+// route::get('/profile/create', [ProfileController::class, 'create']);
 
 route::middleware(['guest'])->group(function ()
 {

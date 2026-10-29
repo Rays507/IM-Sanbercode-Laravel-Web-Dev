@@ -88,10 +88,6 @@ class ProductsController extends Controller implements HasMiddleware
     {
         $cekDetailData = products::find($id);
 
-        if (!$cekDetailData) {
-            return redirect('/products')->with('error', 'Data produk tidak ditemukan.');
-        }
-
         return view ('products.detail', ['product' => $cekDetailData]);
     }
 
