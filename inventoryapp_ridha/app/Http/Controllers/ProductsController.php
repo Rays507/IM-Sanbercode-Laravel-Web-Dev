@@ -8,8 +8,18 @@ use Illuminate\Http\Request;
 use App\Models\Products;
 use App\Models\Categories;
 
-class ProductsController extends Controller
+use Illuminate\Routing\Controllers\HasMiddleware;
+use Illuminate\Routing\Controllers\Middleware;
+
+class ProductsController extends Controller implements HasMiddleware
 {
+    public static function middleware(): array
+    {
+        return [
+            'auth',
+            new Middleware('admin', except: ['index','show']),
+        ];
+    }
     /**
      * Display a listing of the resource.
      */
@@ -77,6 +87,10 @@ class ProductsController extends Controller
     public function show(string $id)
     {
         $cekDetailData = products::find($id);
+
+        if (!$cekDetailData) {
+            return redirect('/products')->with('error', 'Data produk tidak ditemukan.');
+        }
 
         return view ('products.detail', ['product' => $cekDetailData]);
     }

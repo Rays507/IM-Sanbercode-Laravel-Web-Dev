@@ -28,6 +28,7 @@
               <i class="ti ti-dots nav-small-cap-icon fs-6"></i>
               <span class="hide-menu">FORM</span>
             </li>
+            @if(Auth::check() && auth::user()->role === 'admin')
             <li class="sidebar-item">
               <a class="sidebar-link" href="/categories" aria-expanded="false">
                 <span>
@@ -36,6 +37,7 @@
                 <span class="hide-menu">Categories</span>
               </a>
             </li>
+            @endif
             <li class="sidebar-item">
               <a class="sidebar-link" href="/products" aria-expanded="false">
                 <span>

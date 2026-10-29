@@ -6,7 +6,9 @@
         {{ session('success') }}
     </div>
 @endif
+@if(Auth::check() && auth::user()->role === 'admin')
 <a href="/products/create" class="btn btn-primary mb-3">Tambah Data Product</a>
+@endif
 <div class="row">
     @foreach ($products as $item)
     <div class="col-md-4 mb-4">
@@ -29,11 +31,13 @@
                 <form action="/products/{{$item->id}}" method="POST">
                     @csrf
                     <a href="/products/{{$item->id}}" class="btn btn-primary w-100 text-white mb-3">Read More</a>
+                        @if(Auth::check() && auth::user()->role === 'admin')
                         <div class="d-flex gap-2">
                             <a href="/products/{{$item->id}}/edit" class="btn btn-warning w-50 text-white">edit</a>
                             @method('DELETE')
                             <button type="submit" class="btn btn-danger w-50 text-white">delete</button>
                         </div>
+                        @endif
                 </form>
             </div>
         </div>
