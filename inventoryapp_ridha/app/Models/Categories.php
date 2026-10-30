@@ -8,4 +8,9 @@ class Categories extends Model
 {
     protected $table = "categories";
     protected $fillable = ['id','name','description'];
+
+    public function products()
+    {
+        return $this->hasMany(Products::class, 'category_id', 'id');
+    }
 }

@@ -14,12 +14,15 @@
     <div class="col-md-4 mb-4">
         <div class="card h-100 shadow-sm border-1">
             <div style="height: 250px; overflow: hidden;" class="text-center">
-                <img src="{{asset('image/'.$item->image)}}" class="w-100 h-100" alt="{{$item->image}}" stye="object-fit:cover;">
-            </div>
-            <div class="d-flex">
-                <a href="#" class="btn btn-primary w-30 text-white mt-2">{{$item->category_id}}</a>
+                <img src="{{asset('image/'.$item->image)}}" class="w-100 h-100" alt="{{$item->image}}" style="object-fit:cover;">
             </div>
             <div class="card-body d-flex flex-column">
+                <div class="mb-2">
+                    <span class="badge bg-primary text-white px-3 py-2 fw-normal" style="font-size: 0.85rem;">
+                        {{$item->categories->name}}
+                    </span>
+                </div>
+                
                 <h5 class="card-title fw-bold text-dark">{{$item->name, 50}}</h5>
 
                 <p class="text-primary fw-semibold mb-1">RP {{$item->price}}</p>

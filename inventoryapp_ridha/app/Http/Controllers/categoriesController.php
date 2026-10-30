@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\DB;//untuk mengakses database inventoryapp
 use carbon\Carbon;//untuk mengambil data tanggal dan waktu sekarang
 
 use App\Models\Categories;
+use App\Models\Products;
 
 class categoriesController extends Controller
 {
@@ -56,7 +57,7 @@ class categoriesController extends Controller
     //kelas untuk get data id categories
     public function getDataIDCategories($id)
     {
-        $dataTableIDCategories = DB::table('categories')->find($id);//cari data ID di table categories
+        $dataTableIDCategories = Categories::with('products')->find($id);//cari data ID di table categories
         
         return view('categories.detailDataCategories', ["dataIDDetailCategories" => $dataTableIDCategories]);
     }
@@ -64,7 +65,10 @@ class categoriesController extends Controller
     public function getDataIDCategoriesForEdit($id)
     {
         $dataTableIDCategories = DB::table('categories')->find($id);
-        return view('categories.editDataCategories', ["dataIDDetailCategoriesForEdit" => $dataTableIDCategories]);
+        $products = products::all();
+
+        return view('categories.editDataCategories', ["dataIDDetailCategoriesForEdit" => $dataTableIDCategories], ['products' => $products]);
+
     }
 
     public function updateDataByIdCategories(request $postRequest,$id)
