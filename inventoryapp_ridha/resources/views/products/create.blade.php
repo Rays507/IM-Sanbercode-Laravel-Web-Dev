@@ -19,7 +19,7 @@
     @endif
     <div class="mb-3">
     <label class="form-label">Categories</label>
-    <select class="form-control" name="category_id" aria-label="Default select example">
+    <select class="form-select" name="category_id" aria-label="Default select example">
             <option value="">--pilih categories product--</option>
         @forelse ($categories as $item)
             <option value="{{$item->id}}">{{$item->name}}</option>

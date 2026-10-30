@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\File;
 
 use Illuminate\Http\Request;
-
 use App\Models\Products;
 use App\Models\Categories;
 
@@ -57,6 +56,7 @@ class ProductsController extends Controller implements HasMiddleware
         ],
         [
             "required"=>"inputan wajib diisi",
+            'category_id.required' => 'Silakan pilih kategori produk terlebih dahulu!',
             "min"=>"inputan minimal :min karakter",
             "numeric"=>"inputan harus berupa number",
             "mimes"=>"gambar yang diupload harus .png/.jpg/.jpeg",

@@ -8,6 +8,7 @@ use App\Http\Controllers\ProductsController;
 use App\Http\Controllers\usersController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\authController;
+use App\Http\Controllers\TransactionController;
 use App\Http\Middleware\IsAdmin;
 
 
@@ -52,6 +53,9 @@ route::resource('/users',usersController::class);
 //CRUD table profile
 route::resource('/profile',ProfileController::class)->middleware('auth');
 // route::get('/profile/create', [ProfileController::class, 'create']);
+
+//CRUD table Transaction
+route::resource('/transaction', TransactionController::class);
 
 route::middleware(['guest'])->group(function ()
 {
