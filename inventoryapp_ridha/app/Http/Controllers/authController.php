@@ -53,12 +53,13 @@ class authController extends Controller
             "email"=>"inputan :attribute harus berupa email (ex. name@mail.com)"
         ]);
 
-        $userCount = Users::count();
-         if($userCount == 0 ){
-            $roleData = "admin";
-         }else{
-            $roleData = "staff";
-         }
+        $cekAdmin = users::where('role', 'admin')->exists();
+        if (!$cekAdmin) {
+            $roleData = 'admin';
+        } else {
+            $roleData = 'staff';
+        }
+
 
          users::create(
             [

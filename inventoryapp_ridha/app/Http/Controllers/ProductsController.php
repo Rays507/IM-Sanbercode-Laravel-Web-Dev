@@ -153,7 +153,7 @@ class ProductsController extends Controller implements HasMiddleware
 
         $product->save();
 
-        return redirect('/products')->with('success', 'Data products dengan id '.$product->id.' Berhasil Diupdate');
+        return redirect('/products')->with('success', 'Data products dengan nama '.$inputanUser->name.' Berhasil Diupdate');
     }
 
     /**

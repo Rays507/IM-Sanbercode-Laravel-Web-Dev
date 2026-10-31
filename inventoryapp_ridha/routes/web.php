@@ -55,7 +55,7 @@ route::resource('/profile',ProfileController::class)->middleware('auth');
 // route::get('/profile/create', [ProfileController::class, 'create']);
 
 //CRUD table Transaction
-route::resource('/transaction', TransactionController::class);
+route::resource('/transaction', TransactionController::class)->middleware('auth');;
 
 route::middleware(['guest'])->group(function ()
 {

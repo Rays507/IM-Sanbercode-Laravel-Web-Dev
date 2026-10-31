@@ -21,8 +21,9 @@ class TransactionController extends Controller
         if($user->role == "admin")
             {
                 $showDataTransaksi = Transaction::with(['user', 'product'])->get();
-            }else(
-                $showDataTransaksi = Transaction::with(['user', 'product'])->where('user_id', $user->id)->get());
+            }else{
+                $showDataTransaksi = Transaction::with(['user', 'product'])->where('user_id', $user->id)->get();
+            }
         
             return view('transaction.showTransaction', ['transactions' => $showDataTransaksi]);
     }

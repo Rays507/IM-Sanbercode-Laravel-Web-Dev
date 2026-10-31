@@ -30,8 +30,8 @@
     </select>
     <label class="form-label" name="type">type :</label>
     <select class="form-select" name="type" aria-label="Default select example">
-            <option value="In">In</option>
-            <option value="Out">Out</option>
+            <option value="In">Masuk Barang</option>
+            <option value="Out">Keluar BArang</option>
     </select>
     </div>
     <div class="mb-3">

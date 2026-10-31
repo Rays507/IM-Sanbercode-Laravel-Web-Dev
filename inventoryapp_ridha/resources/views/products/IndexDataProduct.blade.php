@@ -19,7 +19,11 @@
             <div class="card-body d-flex flex-column">
                 <div class="mb-2">
                     <span class="badge bg-primary text-white px-3 py-2 fw-normal" style="font-size: 0.85rem;">
-                        {{$item->categories->name}}
+                        @if($item->categories)
+                            {{ $item->categories->name }}
+                        @else
+                            tidak ada category
+                        @endif
                     </span>
                 </div>
                 
